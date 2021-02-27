@@ -1,4 +1,5 @@
 const answer = Math.round(100*Math.random());
+let attempts = 0;
 alert('Привет!\nДавай поиграем в игру угадай число.\nЯ загадал число от 0 до 100. Попробуй угадать.');
 
 while(true) {
@@ -24,13 +25,13 @@ while(true) {
         alert('Введено нецелое число.\nПопробуй ещё раз.');
         continue;
     }
-
+    attempts++;
     if(userNumber > answer) {
         alert('Должно быть меньше.');
     } else if(userNumber < answer) {
         alert('Должно быть больше.');
     } else {
-        alert('Поздравляю, ты угадал число!');
+        alert('Поздравляю, ты угадал число с ' + attempts + ' попытки!');
         break;
     };
 };
